@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+</head>
+<body>
+  <div  class="box"  id="login-form">
+    <div class="login-container" id="login-container">
+      <input type="password" id="password" placeholder="Password" required class="pass">
+      <button onclick="checkPassword2()" class="button">Login</button>
+    </div>
+    <div id="page1" style="display: none;" > <!-- this is dsp lab a1-->
+      <button class="button2" ><a href="studentlabs2.html">Choose The Lab</a></button>
+    </div>
+    <div id="page2" style="display: none;"> <!-- this is dsp lab a2-->
+      <button class="button2" onclick="display('section3')"><a href="studentclass2.html">Choose The Section</a></button>
+    </div>
+  </div>
+
+  <script>
+    function checkPassword2() {
+      const enteredPassword = document.getElementById('password').value,
+      labPassword = 'dept.ece@lab',
+      classPassword = 'dept.ece@class';
+      if (enteredPassword === labPassword) {
+        document.getElementById('login-container').style.display = 'none';
+        document.getElementById('page1').style.display = 'block';
+      } else {
+        enteredPassword === classPassword? ((document.getElementById('login-container').style.display = 'none'),(document.getElementById('page2').style.display = 'block')): alert('Incorrect password. Please try again.');
+      }
+    }    
+  </script>
+</div>
+
+</body>
+</html>
